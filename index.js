@@ -1,20 +1,23 @@
 const { app, BrowserWindow } = require('electron/main')
 const path = require('node:path')
 
-function createWindow () {
+let scale = 1;
+function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    titleBarStyle: "hidden",
+    width: 232 * scale,
+    height: 322 * scale,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    resizable: false,
   })
 
   win.loadFile('index.html')
 }
 
 app.whenReady().then(() => {
-    
+
   createWindow()
 
   app.on('activate', () => {
