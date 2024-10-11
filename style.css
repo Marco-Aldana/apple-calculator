@@ -68,5 +68,5 @@ tr td:last-child:hover {
 }
 
 tr:last-child td{
-    height:  calc((var(--window-height)/7) + 4px) !important;
+    height:  calc((var(--window-height)/7) + 6px) !important;
 }
